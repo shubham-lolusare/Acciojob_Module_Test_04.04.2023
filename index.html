@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NASA Image Of The Day</title>
+    <!-- Adding the google icon stylesheet -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- Adding the CSS file -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- Adding the Favicon -->
+    <link rel="shortcut icon" href="./images/icon.jpg" type="icon/jpg" />
+
+    <!-- Adding the JSS file -->
+    <script src="./js/script.js" defer></script>
+  </head>
+  <body>
+    <!-- The pade structure is built and the values of it will be added dynamically -->
+    <div class="mainWrapper">
+      <!-- This element is the the heading of the page which dynamically changes 
+        with the user inputed date and on the page load will hace the following
+        value-->
+      <div class="header">NASA Pic of the day</div>
+
+      <!-- This element is where the infomation is displayed -->
+      <div class="root">
+        <div class="image"><img /></div>
+        <div class="imageInfo">
+          <h1 class="imageHeading"></h1>
+          <p class="imageDesc"></p>
+        </div>
+      </div>
+
+      <!-- This element contains the form and the search history space -->
+      <div class="dataDiv">
+        <div class="wrapperHis">
+          <h1>Previous Searches</h1>
+          <ul class="history"></ul>
+        </div>
+        <form class="search-form">
+          <input type="date" name="search-input" id="search-input" required />
+          <input type="submit" value="Get Image" id="submitBtn" />
+        </form>
+      </div>
+    </div>
+
+    <!-- This div act as the button for displaying and hiding the date form-->
+    <div class="formOpener">Click Me!</div>
+  </body>
+</html>
