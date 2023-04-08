@@ -35,16 +35,10 @@ window.onload = () => {
   getCurrentImageOfTheDay();
 };
 
-// This is the function which will fetch the data from the server and
-// save the present day fetched image object in the local storage.
-// Hence if the present day image is already fetched then it will be accessed
-// directly from the local storage and will not be fethced again and again.
-// This functionality is added due to the restriction of 2000 requests
-// per day on the apod api.
 function getCurrentImageOfTheDay() {
   let url = `https://api.nasa.gov/planetary/apod?date=${todayDate}&api_key=${myAPIKey}`;
 
-  if (localStorage.getItem("todayImage") === null) {
+  
     fetch(url)
       .then((res) => {
         return res.json();
@@ -53,11 +47,8 @@ function getCurrentImageOfTheDay() {
         localStorage.setItem("todayImage", JSON.stringify(data));
         printToPage(data, todayDate);
       });
-  } else {
-    let data = JSON.parse(localStorage.getItem("todayImage"));
-    printToPage(data, todayDate);
-  }
 }
+
 
 // This is the function which will be only used to print the fetched
 // data on the page.
